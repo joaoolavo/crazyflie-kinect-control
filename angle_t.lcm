@@ -1,0 +1,10 @@
+package exlcm;
+struct angle_t
+{
+    int64_t  timestamp;
+    double   roll;
+    double   pitch;
+    double   yaw;
+    boolean  enabled;
+}
+

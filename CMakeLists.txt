@@ -1,0 +1,17 @@
+cmake_minimum_required(VERSION 2.8)
+project( AutoColourFilter )
+find_package( OpenCV REQUIRED )
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
+include_directories(${OPENCV_INCLUDE_DIRS})
+set(SOURCE_FILES AutoColourFilter.cpp)
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/modules/")
+    find_package(LCM REQUIRED lcm)
+    include_directories(${LCM_INCLUDE_DIRS})
+set(LIBS ${LIBS} ${LCM_LIBRARIES} ${OpenCV_LIBS} )
+set(OpenCV_INCLUDE_DIRS "${OpenCV_INSTALL_PATH}/include/opencv;${OpenCV_INSTALL_PATH}/include")
+link_directories(${OPENCV_LIBRARY_DIRS})
+add_executable( AutoColourFilter AutoColourFilter.cpp )
+target_link_libraries( AutoColourFilter ${LIBS})
+
+set(OpenCV_INCLUDE_DIRS "${OpenCV_INSTALL_PATH}/include/opencv;${OpenCV_INSTALL_PATH}/include")
+

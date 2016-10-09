@@ -1,0 +1,106 @@
+package crazyflie_t;
+
+struct crazyflie_pos_t
+{
+  int64_t timestamp;
+  double x;
+  double y;
+  double z;
+  double roll;
+  double pitch;
+  double yaw;
+}
+
+struct crazyflie_input_t
+{
+  int64_t timestamp;
+  double input[4];
+  double offset;
+  string type;
+}
+
+struct crazyflie_positioninput_t
+{
+  int64_t timestamp;
+  double input[7];
+}
+
+struct crazyflie_state_estimate_t
+{
+  int64_t timestamp;
+  double xhat[12];
+  double t;
+}
+
+struct crazyflie_imu_t
+{
+  int64_t timestamp;
+  double omegax;
+  double omegay;
+  double omegaz;
+  double alphax;
+  double alphay;
+  double alphaz;
+  double dt;
+}
+
+struct crazyflie_state_estimator_commands_t
+{
+  boolean tvlqr_counting;
+}
+
+struct crazyflie_controller_commands_t
+{
+  boolean is_running;
+}
+
+struct crazyflie_hover_commands_t
+{
+  boolean hover;
+}
+
+struct polytopes_t 
+{
+  int32_t id;
+  boolean highlighted;
+  boolean remove;
+  int32_t num_vertices;
+  double V[3][num_vertices]; 
+}
+
+struct dxyz_compare_t
+{
+  double dxyzraw[3];
+  double dxyzfiltered[3];
+}
+
+struct kalman_args_t
+{
+  double input_rpy[3];
+  double input_acc[3];
+  double input_dt;
+  boolean valid_vicon;
+  double meas_xyz[3];
+
+  double smooth_xyz[3];
+  double smooth_dxyz[3];
+}
+
+struct kalman_out_t
+{
+  double kalman_xyz[3];
+  double kalman_dxyz[3];
+
+  double smooth_xyz[3];
+  double smooth_dxyz[3];
+
+  double smooth_xyz_noblackout[3];
+  double smooth_dxyz_noblackout[3];
+}
+
+struct vortex_sensor_t
+{
+  double sensor1;
+  double sensor2;
+  double velocity;
+}
