@@ -13,7 +13,7 @@
 //LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
 //IN THE SOFTWARE.
 
-// This current version of the code was adapted by Joao Olavo 2016
+// This current version of the code for Kinect was adapted by Joao Olavo - Instituto Militar de Engenharia - 2016
 
 #include <sstream>
 #include <string>
